@@ -15,12 +15,9 @@ const signupBody = zod.object({
 	password: zod.string()
 })
 
-router.get("/", (req, res) => {
-    res.send("Welcome to user");
+router.get("/signup", (req, res) => {
+    res.send("Welcome to signup");
 });
-router.get("/signup", async (req, res) => {
-    res.send("iwhjbfalcsd");
-})
 router.post("/signup", async (req, res) => {
     const { success } = signupBody.safeParse(req.body)
     if (!success) {
